@@ -1,0 +1,39 @@
+server:
+  port: 4080
+spring:
+  profiles: local
+  domain: local-api.gggg.com
+  jpa:
+    hibernate:
+      use-new-id-generator-mappings: false
+      show-sql: true
+      format_sql: true
+      use_sql_comments: true
+    open-in-view: false
+  datasource:
+    datasource-write:
+      driverClassName: com.mysql.cj.jdbc.Driver
+      jdbcUrl: jdbc:mysql://eeee.cqsbpqr5yox1.ap-northeast-2.rds.amazonaws.com:3306/eeee?autoReconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull
+      username: admin
+      password: wjdwlsgh!1
+      maximumPoolSize: 30
+      minimumIdle: 5
+      poolName: write
+      readOnly: false
+    datasource-read:
+      driverClassName: com.mysql.cj.jdbc.Driver
+      jdbcUrl: jdbc:mysql://eeee.cqsbpqr5yox1.ap-northeast-2.rds.amazonaws.com:3306/eeee?autoReconnect=true&useSSL=false&zeroDateTimeBehavior=convertToNull
+      username: admin
+      password: wjdwlsgh!1
+      maximumPoolSize: 30
+      minimumIdle: 5
+      poolName: read
+      readOnly: true
+  output:
+    ansi:
+      enabled: always
+logging:
+  level:
+    org.hibernate.SQL: debug
+    org.springframework: info
+    org.hibernate.type.descriptor.sql: trace
