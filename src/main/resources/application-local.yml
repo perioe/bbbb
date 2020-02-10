@@ -37,3 +37,6 @@ logging:
     org.hibernate.SQL: debug
     org.springframework: info
     org.hibernate.type.descriptor.sql: trace
+---
+notify:
+  slack: "https://hooks.slack.com/services/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"
