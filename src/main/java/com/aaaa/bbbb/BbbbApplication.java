@@ -38,8 +38,8 @@ public class BbbbApplication extends SpringBootServletInitializer {
         result.append("$(\"#REQ_1\").val(\"");
         result.append(message);
         result.append("\");");
-        result.append("$(\"#PRO_NM\").val(\"");
-        result.append(deal);
+//        result.append("$(\"#PRO_NM\").val(\"");
+//        result.append(deal);
         result.append("\");");
         result.append("$(\"#AUTO_RLS_YN\").prop(\"checked\", true);");
         result.append("$(\"#AUTO_REQ_YN\").prop(\"checked\", true);");
