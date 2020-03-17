@@ -7,21 +7,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 
 @RestController
 @Validated
-@RequestMapping(value = "/test")
+@RequestMapping(value = "/slack")
 public class SlackController {
 
   @Autowired private TestService testService;
 
-  @GetMapping(value = "/test1")
-  @ApiOperation(value = "just select")
-  public TestResponse getTest(
-          @RequestHeader(value = "X-Test", required = false) String head,
-          @RequestParam @NotNull @Min(1) Long id) {
+  @PostMapping(value = "/send")
+  @ApiOperation(value = "send message")
+  public TestResponse send(@Valid Long id) {
     return testService.getTest(id);
   }
 }

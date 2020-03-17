@@ -11,7 +11,7 @@ import org.springframework.web.client.RestTemplate;
 
 @Component
 @Slf4j
-public class SlackNotifier {
+public class SlackConfig {
 
   @Bean
   public RestTemplate restTemplate() {

@@ -20,8 +20,8 @@ public class TestController {
   @GetMapping(value = "/test1")
   @ApiOperation(value = "just select")
   public TestResponse getTest(
-      @RequestHeader(value = "X-Test", required = false) String head,
-      @RequestParam @NotNull @Min(1) Long id) {
+          @RequestHeader(value = "X-Test", required = false) String head,
+          @RequestParam @NotNull @Min(1) Long id) {
     return testService.getTest(id);
   }
 }

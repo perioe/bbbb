@@ -1,18 +1,15 @@
 package com.aaaa.bbbb.domain.service;
 
-import com.aaaa.bbbb.domain.entity.TestEntity;
-import com.aaaa.bbbb.domain.repository.TestRepository;
+import com.aaaa.bbbb.infrastructure.SlackConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
-
 @Service
 public class SlackDomainService {
-  @Autowired private TestRepository testRepository;
 
-  public TestEntity getTest(Long id) {
-    Optional<TestEntity> test = testRepository.findById(id);
-    return Optional.ofNullable(test).orElse(test).get();
+  @Autowired private SlackConfig slackConfig;
+
+  public void sendMessage(String message) {
+    slackConfig.notify(message);
   }
 }
